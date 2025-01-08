@@ -45,8 +45,8 @@ else{
 }
 
 // #4
-weather = "sunny";
-switch (weather){
+currentWeather = "sunny";
+switch (currentWeather){
     case "sunny":
         console.log("Don't forget your sunglasses.");
         break;
