@@ -73,4 +73,28 @@ orderFood("Pizza", 3);
 orderFood("Pizza");
 
 // #10
-function calculateFactorial(){}
+function calculateFactorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+    return n * calculateFactorial(n - 1);
+}
+
+console.log(calculateFactorial(5)); // 120
+console.log(calculateFactorial(7)); // 5040
+console.log(calculateFactorial(10)); // 3628800
+
+// #11
+function isEven(number){
+    if (number % 2 === 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+console.log(isEven(7));
+console.log(isEven(10));
+console.log(isEven(18));
+console.log(isEven(45));
