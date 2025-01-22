@@ -13,9 +13,8 @@ const gravity = 9.8;
 console.log(gravity);
 
 //#3
-let multiply = function(x, y){
-    return x*y;
-};
+const multiply = (x, y) => x*y;
+console.log(multiply);
 
 //#4
 let userName = "John";
