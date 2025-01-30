@@ -41,6 +41,6 @@ console.log(author);
 
 // 8.
 const colors = ["red", "green", "blue"];
-const [first, last] = colors;
+const [first, second, third] = colors;
 console.log(first);
-console.log(last);
+console.log(third);
