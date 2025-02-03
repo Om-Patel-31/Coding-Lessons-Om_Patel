@@ -43,7 +43,7 @@ console.log({ second });
 console.log({ third });
 
 // 9.
-let make = prompt("Enter your car make: ");
-let model = prompt("Enter your car model: ");
-let carYear = prompt("Enter your car year: ");
+let make = window.prompt("Enter your car make: ");
+let model = window.prompt("Enter your car model: ");
+let carYear = window.prompt("Enter your car year: ");
 console.log(`Your car is a ${make} ${model} made in ${carYear}`);
