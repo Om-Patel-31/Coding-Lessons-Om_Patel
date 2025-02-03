@@ -44,3 +44,14 @@ const colors = ["red", "green", "blue"];
 const [first, second, third] = colors;
 console.log(first);
 console.log(third);
+
+// 9.
+const userName = prompt("Enter your name: ");
+const welcomeMessage = `Hello, ${userName}`;
+console.log(welcomeMessage);
+
+// 10.
+const movieTitle = prompt("Enter the movie title: ");
+const movieGenre = prompt("Enter the movie genre: ");
+const releaseYear = prompt("Enter the release year: ");
+console.log(`The movie ${movieTitle} is a ${movieGenre} movie released in ${releaseYear}`);
