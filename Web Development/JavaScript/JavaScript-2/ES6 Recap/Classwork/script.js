@@ -36,7 +36,7 @@ const book = {
     author: "F. Scott Fitzgerald"
 };
 const { title, author} = book;
-console.log(title);
+console.log({title});
 console.log(author);
 
 // 8.
