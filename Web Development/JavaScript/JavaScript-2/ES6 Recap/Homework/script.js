@@ -38,7 +38,7 @@ console.log({ director });
 
 // 8.
 const fruits = ["apple", "orange", "banana", "grape"];
-fruits[first, second, third] = fruits;
+const {first, second, third} = fruits;
 console.log({ second });
 console.log({ third });
 
