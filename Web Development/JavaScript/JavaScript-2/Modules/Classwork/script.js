@@ -1,10 +1,10 @@
 // 1.
-import { PI } from "./mathUtils";
+import { PI, AreaOfCircle } from "./mathUtils";
 let radius = 5;
-const AreaOfCircle = (radius) => {
+const calculateAreaOfCircle = (radius) => {
   return PI * radius * radius;
 };
-console.log(AreaOfCircle(radius));
+console.log(calculateAreaOfCircle(radius));
 
 // 2.
 import { capitalizeFirstLetter } from "./stringUtils";
@@ -12,9 +12,8 @@ let string = "hello";
 console.log(capitalizeFirstLetter(string));
 
 // 3.
-import { PI, AreaOfCircle } from "./mathUtils";
-radius = 7;
-console.log(AreaOfCircle(radius));
+// radius = 7;
+// console.log(AreaOfCircle(radius));
 
 // 4.
 import './deferredModule.js';
@@ -31,10 +30,10 @@ testStrictMode();
 
 // 8.
 import {apiUrl, apiKey, timeout, retries} from "./configManager.js";
-console.log(configManager.apiUrl);
-console.log(configManager.apiKey);
-console.log(configManager.timeout);
-console.log(configManager.retries);
+console.log(apiUrl);
+console.log(apiKey);
+console.log(timeout);
+console.log(retries);
 
 // 9.
 import { getPrivateVar } from "./encapsulationModule.js";
