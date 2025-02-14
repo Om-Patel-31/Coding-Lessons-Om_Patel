@@ -10,4 +10,5 @@ const encapsulationModule = (function() {
     };
 })();
 
+export const getPrivateVar = encapsulationModule.getPrivateVar;
 export default encapsulationModule;

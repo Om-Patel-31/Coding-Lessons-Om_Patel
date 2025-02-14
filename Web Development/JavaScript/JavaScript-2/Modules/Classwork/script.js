@@ -1,19 +1,16 @@
 // 1.
-import { PI, AreaOfCircle } from "./mathUtils";
+import { PI, AreaOfCircle } from "./mathUtils.js";
 let radius = 5;
-const calculateAreaOfCircle = (radius) => {
-  return PI * radius * radius;
-};
-console.log(calculateAreaOfCircle(radius));
+console.log(AreaOfCircle(radius));
 
 // 2.
-import { capitalizeFirstLetter } from "./stringUtils";
+import { capitalizeFirstLetter } from "./stringUtils.js";
 let string = "hello";
 console.log(capitalizeFirstLetter(string));
 
 // 3.
-// radius = 7;
-// console.log(AreaOfCircle(radius));
+radius = 7;
+console.log(AreaOfCircle(radius));
 
 // 4.
 import './deferredModule.js';
@@ -22,8 +19,8 @@ import './deferredModule.js';
 //used in moduleB.js
 
 // 6.
-import { testStrictMode } from "./strictModeModule.js";
-testStrictMode();
+// import { testStrictMode } from "./strictModeModule.js";
+// testStrictMode();
 
 // 7.
 // done in other files
