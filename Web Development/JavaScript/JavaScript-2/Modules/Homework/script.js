@@ -27,8 +27,9 @@ console.log(discountedTotalCost);
 // Error: ReferenceError: userName is not defined
 
 // 6.
-import { validate } from './strictValidationModule.js';
-console.log(validate(10));
+// import { validate } from './strictValidationModule.js';
+// console.log(validate(10)); 
+// Uncaught ReferenceError: undeclaredVariable is not defined
 
 // 7.
 // Completed in a different file
