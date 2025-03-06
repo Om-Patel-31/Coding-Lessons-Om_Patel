@@ -33,7 +33,9 @@ function someThing(x, callback) {
     console.log("Do something");
     callback();
 }
-someThing(1, "First anonymous callback!");
+someThing(1, function(){
+    console.log("First anonymous callback!");
+});
 
 // 9.
 console.log("#9");
@@ -41,7 +43,9 @@ function someThingElse(y, callback) {
     console.log("Do something else");
     callback();
 }
-someThingElse(2, "Second anonymous callback!");
+someThingElse(2, function(){
+    console.log("Second anonymous callback!");
+});
 
 // 10.
 console.log("#10");
@@ -49,7 +53,9 @@ function doThirdThing(z, callback) {
     console.log("Do third thing");
     callback();
 }
-doThirdThing(3, "Third anonymous callback!");
+doThirdThing(3, function(){
+    console.log("Third anonymous callback!");
+});
 
 // 11.
 console.log("#11");
