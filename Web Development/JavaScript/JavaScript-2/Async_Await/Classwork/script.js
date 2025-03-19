@@ -92,7 +92,7 @@ async function processUserInput(userName) {
     try{
         const response = await fetch(`https://jsonplaceholder.typicode.com/users?username=${userName}`);
         const data = await response.json();
-        console.log(data.toUpperCase());
+        console.log(data);
     } catch (error) {
         console.log(error);
     }
