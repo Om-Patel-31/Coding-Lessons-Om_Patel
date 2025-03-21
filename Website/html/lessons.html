@@ -15,7 +15,7 @@
     <script>
         async function fetchAndDisplayCode() {
             try {
-                const response = await fetch('/Website/html/index.html');
+                const response = await fetch('/index.html');
                 let text = await response.text();
 
                 // Escape special HTML characters to prevent rendering
