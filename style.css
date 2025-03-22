@@ -59,3 +59,9 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 255, 0, 0.5);
 }
+
+.card img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
