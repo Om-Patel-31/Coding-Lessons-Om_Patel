@@ -7,6 +7,11 @@ body {
     text-transform: uppercase;
 }
 
+.hero {
+    align-self: center;
+    align-items: self-start;
+}
+
 nav {
     margin: 0px auto;
     text-align: center;
