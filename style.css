@@ -1,9 +1,10 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'OCR A';
     background-color: #0d0d0d;
     color: #00ff00;
     margin: 0;
     padding: 0;
+    text-transform: uppercase;
 }
 
 nav {
