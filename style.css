@@ -71,6 +71,7 @@ nav ul li a:hover {
     width: 100px;
     height: 100px;
     margin-top: 10px;
+    margin-bottom: -20px;
 }
 
 hr {
