@@ -49,11 +49,41 @@ nav ul li a:hover {
     color: #333;
 }
 
-.card {
+.view-toggle {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.view-toggle button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #262626;
+    color: #00ff00;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-toggle button:hover {
+    background-color: #00ff00;
+    color: #262626;
+}
+
+.content-cards.card-view .card {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px -10px 10px -10px;
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.5);
+}
+
+.content-cards.list-view .card {
+    display: block;
+    margin: 10px 0;
     background-color: #1e1e1e;
     padding: 15px;
     border-radius: 10px;
