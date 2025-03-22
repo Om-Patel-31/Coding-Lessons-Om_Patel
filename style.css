@@ -1,11 +1,18 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e0e0e0;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 nav {
     margin: 50px auto;
     text-align: center;
+    background-color: #444;
+    padding: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -16,20 +23,21 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    background-color: #333;
-    padding: 10px 20px;
-    border-radius: 5px;
+    background-color: #555;
+    padding: 12px 25px;
+    border-radius: 25px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 
 nav ul li a:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    background-color: #666;
 }
