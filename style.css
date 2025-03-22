@@ -72,3 +72,9 @@ nav ul li a:hover {
     height: 100px;
     margin-bottom: 10px;
 }
+
+hr {
+    border: 1px solid rgba(0, 255, 0, 0.7);
+    width: 80%;
+    margin: 20px auto;
+}
