@@ -53,7 +53,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
+    margin: 20px -20px 20px -20px;
     background-color: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
