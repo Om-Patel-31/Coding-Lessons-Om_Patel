@@ -8,7 +8,7 @@ body {
 }
 
 .hero {
-    align-self: center;
+    align-content: center;
 }
 
 nav {
