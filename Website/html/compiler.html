@@ -43,28 +43,28 @@
         <br>
         <button id="run-btn">Run Code</button>
         <button id="clear-btn">Clear Code</button>
-        <button id="clear-output-btn">Clear Output</button> <!-- New clear output button -->
         <h2 id="outputHeading">Output:</h2>
         <pre id="output"></pre>
+        <button id="clear-output-btn">Clear Output</button> <!-- New clear output button -->
     </div>
-
+    
     <!-- Brython Python Script -->
     <script type="text/python">
         from browser import document, console
-
+        
         def run_code(event):
-            output = document["output"]
-            output.text = ""  # Clear previous output
-            code = document["code"].value  # Get the Python code
-
-            def custom_print(*args):
-                output.text += " ".join(map(str, args)) + "\n"
-
-            try:
-                exec(code, {"print": custom_print})
-            except Exception as e:
-                output.text = f"Error: {e}"
-
+        output = document["output"]
+        output.text = ""  # Clear previous output
+        code = document["code"].value  # Get the Python code
+        
+        def custom_print(*args):
+        output.text += " ".join(map(str, args)) + "\n"
+        
+        try:
+        exec(code, {"print": custom_print})
+        except Exception as e:
+        output.text = f"Error: {e}"
+        
         # Bind button click event
         document["run-btn"].bind("click", run_code)
     </script>
