@@ -1,28 +1,18 @@
-async function runPython() {
-    if (!window.pyodide) {
-        document.getElementById("output").innerText = "Error: Pyodide is not yet loaded!";
+function runPython() {
+    // Get the Python code from the textarea
+    let code = document.getElementById("code").value;
+    
+    // Check if the Brython is loaded
+    if (!window.Brython) {
+        document.getElementById("output").innerText = "Error: Brython is not yet loaded!";
         return;
     }
 
-    let code = document.getElementById("code").value;
     try {
-        let wrappedCode = `
-import sys
-from io import StringIO
-
-old_stdout = sys.stdout
-sys.stdout = new_stdout = StringIO()
-
-try:
-    exec("""${code}""")  # Preserves indentation
-except Exception as e:
-    print("Error:", e)
-
-sys.stdout = old_stdout
-new_stdout.getvalue()
-        `;
-
-        let output = await pyodide.runPythonAsync(wrappedCode);
+        // Execute Python code with Brython
+        let output = __BRYTHON__.run_script(code);
+        
+        // Show the output
         document.getElementById("output").innerText = output;
     } catch (error) {
         document.getElementById("output").innerText = "Error:\n" + error;

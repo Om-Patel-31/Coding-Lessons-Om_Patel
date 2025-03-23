@@ -6,10 +6,10 @@
     <title>Python Compiler</title>
     <link rel="stylesheet" href="/Website/css/compiler.css">
     <link href="https://fonts.googleapis.com/css2?family=OCR+A&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js"></script>
     <script src="/Website/javascript/compiler.js"></script>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.0/full/pyodide.js"></script>
 </head>
-<body>
+<body onload="brython()">
     <header class="head">
         <h1>Python Compiler</h1>
     </header>
@@ -27,7 +27,5 @@
         <h2>Output:</h2>
         <pre id="output"></pre>
     </div>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.0/full/pyodide.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
