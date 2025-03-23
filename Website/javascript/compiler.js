@@ -10,25 +10,31 @@ document.addEventListener("DOMContentLoaded", function () {
             tabSize: 4
         });
 
-        // Expose CodeMirror editor globally
-        window.getCode = function () {
+        // Function to get CodeMirror content
+        function getCode() {
             return codeMirrorEditor.getValue();
-        };
+        }
 
-        // Update Brython textarea with CodeMirror content before running code
+        // Function to set CodeMirror content
+        function setCode(value) {
+            codeMirrorEditor.setValue(value);
+        }
+
+        // Run button - updates textarea and triggers Brython
         document.getElementById("run-btn").addEventListener("click", function () {
             document.getElementById("code").value = getCode();
         });
 
-        // Clear CodeMirror content when clear button is clicked
+        // Clear CodeMirror content
         document.getElementById("clear-btn").addEventListener("click", function () {
-            codeMirrorEditor.setValue("");
+            setCode("");
         });
 
-        // Clear output content when clear output button is clicked
+        // Clear output content
         document.getElementById("clear-output-btn").addEventListener("click", function () {
             document.getElementById("output").textContent = "";
         });
+
     } else {
         console.error("CodeMirror failed to load.");
     }
