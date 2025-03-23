@@ -1,64 +1,9 @@
-body {
-    font-family: 'OCR A';
-    background-color: #121212;
-    color: #00ff00;
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.head {
-    margin-top: 20px;
-}
-
-nav {
-    margin: 20px auto;
-    text-align: center;
-    background-color: transparent;
-    padding: 20px 50px;
-    border-radius: 10px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #00ff00;
-    background-color: transparent;
-    padding: 12px 25px;
-    border-radius: 25px;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-}
-
-nav ul li a:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 5px rgba(0, 255, 0, 0.5);
-    background-color: rgba(0, 255, 0, 0.7);
-    color: #333;
-}
-
-.content {
-    margin: 20px;
-}
-
-textarea {
-    width: 80%;
-    height: 200px;
+.CodeMirror {
+    border: 1px solid #00ff00;
     font-size: 16px;
+    height: 200px;
     background-color: #1e1e1e;
     color: #00ff00;
-    border: 1px solid #00ff00;
-    padding: 10px;
 }
 
 button {
@@ -76,16 +21,4 @@ button {
 button:hover {
     transform: scale(1.1);
     box-shadow: 0 5px 5px rgba(0, 255, 0, 0.5);
-}
-
-pre {
-    background-color: #1e1e1e;
-    padding: 10px;
-    border-radius: 5px;
-    width: 80%;
-    text-align: left;
-    margin: auto;
-    overflow: auto;
-    border: 1px solid #00ff00;
-    text-transform: none;
 }
