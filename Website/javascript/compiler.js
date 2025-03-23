@@ -16,8 +16,8 @@ async function runPython() {
     let code = document.getElementById("code").value;
     try {
         let output = await pyodide.runPythonAsync(code);
-        document.getElementById("output").innerText = output;
+        document.getElementById("output").innerText = "Output:\n" + output;
     } catch (error) {
-        document.getElementById("output").innerText = "Error: " + error;
+        document.getElementById("output").innerText = "Error:\n" + error;
     }
 }
