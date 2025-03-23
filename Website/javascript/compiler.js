@@ -19,6 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("run-btn").addEventListener("click", function () {
             document.getElementById("code").value = getCode();
         });
+
+        // Clear CodeMirror content when clear button is clicked
+        document.getElementById("clear-btn").addEventListener("click", function () {
+            codeMirrorEditor.setValue("");
+        });
     } else {
         console.error("CodeMirror failed to load.");
     }
