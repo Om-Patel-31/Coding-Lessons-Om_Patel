@@ -142,3 +142,7 @@ button:hover {
     box-shadow: 0 5px 5px rgba(0, 255, 0, 0.5);
     text-align: center;
 }
+
+#outputHeading {
+    text-align: center;
+}
