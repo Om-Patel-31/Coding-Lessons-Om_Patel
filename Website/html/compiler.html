@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/theme/dracula.min.css">
 
+    <!-- Load CodeMirror Scripts First -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/addon/edit/matchbrackets.min.js"></script>
+
     <!-- Brython Library -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.3/brython.min.js"></script>
 
@@ -47,15 +53,17 @@
         def run_code(event):
             output = document["output"]
             output.text = ""  # Clear previous output
-
             code = document["code"].value  # Get the Python code
 
+            def custom_print(*args):
+                output.text += " ".join(map(str, args)) + "\n"
+
             try:
-                exec(code, {"print": lambda *args: output.text += " ".join(map(str, args)) + "\n"})
+                exec(code, {"print": custom_print})
             except Exception as e:
                 output.text = f"Error: {e}"
 
-        # Bind the button click event
+        # Bind button click event
         document["run-btn"].bind("click", run_code)
     </script>
 </body>
