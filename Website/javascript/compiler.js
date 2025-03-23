@@ -1,9 +1,18 @@
 async function loadPyodideAndRun() {
     window.pyodide = await loadPyodide();
+    console.log("Pyodide loaded successfully!");
 }
-loadPyodideAndRun();
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await loadPyodideAndRun();
+});
 
 async function runPython() {
+    if (!window.pyodide) {
+        document.getElementById("output").innerText = "Error: Pyodide is not yet loaded!";
+        return;
+    }
+
     let code = document.getElementById("code").value;
     try {
         let output = await pyodide.runPythonAsync(code);
