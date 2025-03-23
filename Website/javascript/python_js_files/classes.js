@@ -15,7 +15,7 @@ function loadCode(filePath, elementId) {
         });
 }
 
-loadCode("/Website/Python/Classes/classes.py", 'codeDisplay1');
-loadCode("/Website/Python/Classes/Inheritance_and_Polymorphism.py", 'codeDisplay2');
-loadCode("/Website/Python/Classes/basta_fazoolin.py", 'codeDisplay3');
-loadCode("/Website/Python/Classes/Become_a_pokemon_master.py", 'codeDisplay4');
+loadCode("/Website/python/Classes/classes.py", 'codeDisplay1');
+loadCode("/Website/python/Classes/Inheritance_and_Polymorphism.py", 'codeDisplay2');
+loadCode("/Website/python/Classes/basta_fazoolin.py", 'codeDisplay3');
+loadCode("/Website/python/Classes/Become_a_pokemon_master.py", 'codeDisplay4');
