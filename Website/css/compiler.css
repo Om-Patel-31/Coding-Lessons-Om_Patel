@@ -1,5 +1,5 @@
 body {
-    font-family: 'OCR A', sans-serif;
+    font-family: 'OCR A';
     background-color: #121212;
     color: #00ff00;
     margin: 0;
@@ -70,6 +70,7 @@ button {
     cursor: pointer;
     margin-top: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 50%;
 }
 
 button:hover {
@@ -86,4 +87,5 @@ pre {
     margin: auto;
     overflow: auto;
     border: 1px solid #00ff00;
+    text-transform: none;
 }
