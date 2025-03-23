@@ -32,7 +32,7 @@ new_stdout.getvalue()
         `;
 
         let output = await pyodide.runPythonAsync(wrappedCode);
-        document.getElementById("output").innerText = "Output:\n" + output;
+        document.getElementById("output").innerText = output;
     } catch (error) {
         document.getElementById("output").innerText = "Error:\n" + error;
     }
