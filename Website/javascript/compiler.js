@@ -15,8 +15,23 @@ async function runPython() {
 
     let code = document.getElementById("code").value;
     try {
-        let output = await pyodide.runPythonAsync(code);
-        document.getElementById("output").innerText = "Output:\n" + output;
+        let wrappedCode = `
+import sys
+from io import StringIO
+
+old_stdout = sys.stdout
+sys.stdout = new_stdout = StringIO()
+
+try:
+    exec(${JSON.stringify(code)})
+except Exception as e:
+    print("Error:", e)
+
+sys.stdout = old_stdout
+new_stdout.getvalue()
+        `;
+
+        let output = await pyodide.runPythonAsync(wrappedCode);
     } catch (error) {
         document.getElementById("output").innerText = "Error:\n" + error;
     }
