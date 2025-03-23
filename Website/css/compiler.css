@@ -104,6 +104,9 @@ footer img {
     height: 200px;
     background-color: #1e1e1e;
     color: #00ff00;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
 }
 
 button {
@@ -116,9 +119,14 @@ button {
     margin-top: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
     border-radius: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 button:hover {
     transform: scale(1.1);
     box-shadow: 0 5px 5px rgba(0, 255, 0, 0.5);
+    text-align: center;
 }
