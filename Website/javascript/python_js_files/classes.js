@@ -1,14 +1,17 @@
-// Function to load code from a file and display it in a specified container
 function loadCode(filePath, elementId) {
     fetch(filePath)
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+        })
         .then(data => {
-            // Insert the code into the designated element
-            document.getElementById(elementId).innerHTML = "<code>" + data.replace(/</g, "&lt;").replace(/>/g, "&gt;") + "</code>";
+            document.getElementById(elementId).textContent = data;
         })
         .catch(error => {
             console.error('Error loading the file:', error);
-            document.getElementById(elementId).innerHTML = "Failed to load the code.";
+            document.getElementById(elementId).textContent = "Failed to load the code.";
         });
 }
 
