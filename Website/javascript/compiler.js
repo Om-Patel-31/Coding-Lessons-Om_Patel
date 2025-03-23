@@ -1,12 +1,3 @@
-async function loadPyodideAndRun() {
-    window.pyodide = await loadPyodide();
-    console.log("Pyodide loaded successfully!");
-}
-
-document.addEventListener("DOMContentLoaded", async () => {
-    await loadPyodideAndRun();
-});
-
 async function runPython() {
     if (!window.pyodide) {
         document.getElementById("output").innerText = "Error: Pyodide is not yet loaded!";
@@ -23,7 +14,7 @@ old_stdout = sys.stdout
 sys.stdout = new_stdout = StringIO()
 
 try:
-    exec(${JSON.stringify(code)})
+    exec("""${code}""")  # Preserves indentation
 except Exception as e:
     print("Error:", e)
 
