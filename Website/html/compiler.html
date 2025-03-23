@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Compiler</title>
+    <title>Brython Example</title>
     <link rel="stylesheet" href="/Website/css/compiler.css">
     <link href="https://fonts.googleapis.com/css2?family=OCR+A&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js"></script>
@@ -11,7 +11,7 @@
 </head>
 <body onload="brython()">
     <header class="head">
-        <h1>Python Compiler</h1>
+        <h1>Brython Example</h1>
     </header>
     <nav>
         <ul>
@@ -21,11 +21,18 @@
         </ul>
     </nav>
     <div class="content">
-        <textarea id="code" placeholder="Write Python code here..."></textarea>
-        <br>
-        <button onclick="runPython()">Run Code</button>
+        <button id="my_button">Click Me</button>
         <h2>Output:</h2>
         <pre id="output"></pre>
     </div>
+    
+    <script type="text/python">
+        from browser import document
+        
+        def on_click(event):
+            document["output"].text = "Hello, Brython!"
+        
+        document["my_button"].bind("click", on_click)
+    </script>
 </body>
 </html>

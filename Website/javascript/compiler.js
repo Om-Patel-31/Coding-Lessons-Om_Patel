@@ -1,20 +1,11 @@
 function runPython() {
-    // Get the Python code from the textarea
     let code = document.getElementById("code").value;
+    let output = document.getElementById("output");
     
-    // Check if the Brython is loaded
-    if (!window.Brython) {
-        document.getElementById("output").innerText = "Error: Brython is not yet loaded!";
-        return;
-    }
-
     try {
-        // Execute Python code with Brython
-        let output = __BRYTHON__.run_script(code);
-        
-        // Show the output
-        document.getElementById("output").innerText = output;
+        output.innerHTML = ''; // Clear previous output
+        __BRYTHON__.run_script(code);
     } catch (error) {
-        document.getElementById("output").innerText = "Error:\n" + error;
+        output.innerHTML = "Error: " + error;
     }
 }
