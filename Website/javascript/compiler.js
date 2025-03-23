@@ -24,6 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("clear-btn").addEventListener("click", function () {
             codeMirrorEditor.setValue("");
         });
+
+        // Clear output content when clear output button is clicked
+        document.getElementById("clear-output-btn").addEventListener("click", function () {
+            document.getElementById("output").textContent = "";
+        });
     } else {
         console.error("CodeMirror failed to load.");
     }
