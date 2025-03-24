@@ -17,5 +17,5 @@ function loadCode(filePath, elementId) {
 
 loadCode("../../Python/Classes/classes.py", 'codeDisplay1');
 loadCode("../../Python/Classes/Inheritance_and_Polymorphism.py", 'codeDisplay2');
-loadCode("../../Python/Classes/basta_fazoolin.py", 'codeDisplay3');
+loadCode("../../Python/Classes/basta_fazoolin'.py", 'codeDisplay3');
 loadCode("../../Python/Classes/Become_a_pokemon_master.py", 'codeDisplay4');
