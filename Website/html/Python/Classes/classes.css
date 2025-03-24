@@ -98,6 +98,9 @@ pre {
     border-radius: 10px;
     overflow-x: auto;
     white-space: pre-wrap;
+    text-transform: none;
+    font-family: monospace;
+    color: #00ff00;
 }
 
 pre code {
@@ -119,10 +122,4 @@ pre code span::before {
     width: 30px;
     text-align: right;
     color: rgba(0, 255, 0, 0.5);
-}
-
-code {
-    font-family: monospace;
-    color: #00ff00;
-    text-transform: none;
 }
