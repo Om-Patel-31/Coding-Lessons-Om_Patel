@@ -100,14 +100,29 @@ pre {
     white-space: pre-wrap;
 }
 
+pre code {
+    display: block;
+    counter-reset: line-number;
+}
+
+pre code span {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+}
+
+pre code span::before {
+    content: counter(line-number);
+    counter-increment: line-number;
+    position: absolute;
+    left: 10px;
+    width: 30px;
+    text-align: right;
+    color: rgba(0, 255, 0, 0.5);
+}
+
 code {
     font-family: monospace;
     color: #00ff00;
     text-transform: none;
-}
-
-@media (max-width: 768px) {
-    .code-block {
-        width: 100%; /* Stack blocks on smaller screens */
-    }
 }
