@@ -115,7 +115,7 @@ pre code span {
 }
 
 pre code span::before {
-    content: counter(line-number);
+    content: counter(line-number) " ";
     counter-increment: line-number;
     position: absolute;
     left: 10px;
