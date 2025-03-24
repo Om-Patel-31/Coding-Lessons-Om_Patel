@@ -70,9 +70,29 @@ footer img {
     height: 50px;
     margin: 10px;
     border-radius: 75%;
-
 }
 
+/* 📌 Code container: Two files in a row */
+.code-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+/* 📌 Code block design */
+.code-block {
+    width: 45%; /* Adjusts for two columns */
+    background-color: #000;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* 📌 Code style */
 pre {
     background-color: #000;
     padding: 15px;
@@ -84,4 +104,11 @@ pre {
 code {
     font-family: monospace;
     color: #00ff00;
+}
+
+/* 📌 Responsive design */
+@media (max-width: 768px) {
+    .code-block {
+        width: 100%; /* Stack blocks on smaller screens */
+    }
 }
