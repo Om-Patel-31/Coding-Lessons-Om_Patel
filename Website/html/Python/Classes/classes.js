@@ -7,7 +7,7 @@ function loadCode(filePath, elementId) {
             return response.text();
         })
         .then(data => {
-            document.getElementById(elementId).textContent = data;
+            document.getElementById(elementId).innerHTML = `<code>${data}</code>`;
         })
         .catch(error => {
             console.error('Error loading the file:', error);

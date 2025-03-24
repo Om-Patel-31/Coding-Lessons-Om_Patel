@@ -72,3 +72,16 @@ footer img {
     border-radius: 75%;
 
 }
+
+pre {
+    background-color: #000;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+code {
+    font-family: monospace;
+    color: #00ff00;
+}
