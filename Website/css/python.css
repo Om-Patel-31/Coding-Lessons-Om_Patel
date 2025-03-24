@@ -47,6 +47,31 @@ nav ul li a:hover {
     color: #333;
 }
 
+.content-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.card {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.5);
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
 hr {
     border: 1px solid rgba(0, 255, 0, 0.7);
     width: 80%;
@@ -71,4 +96,8 @@ footer img {
     margin: 10px;
     border-radius: 75%;
 
+}
+
+#python-title {
+    text-align: center;
 }
