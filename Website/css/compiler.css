@@ -131,24 +131,39 @@ button {
     margin-top: 10px;
     transition: all 0.3s ease;
     border-radius: 25px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-    font-family: 'OCR A', monospace;
+}
+
+/* Custom positioning for specific buttons */
+#run-btn {
+    float: right;
+    margin-bottom: 20px;
+}
+
+.output-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+#outputHeading {
+    margin: 0;
+    display: inline-block;
+}
+
+#clear-output-btn {
+    margin: 0;
+    display: inline-block;
 }
 
 button:hover {
     transform: scale(1.1);
     box-shadow: 0 5px 5px rgba(0, 255, 0, 0.5);
-    text-align: center;
-}
-
-#outputHeading {
     text-align: center;
 }
