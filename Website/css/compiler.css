@@ -142,3 +142,13 @@ button {
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
     font-family: 'OCR A', monospace;
 }
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 5px rgba(0, 255, 0, 0.5);
+    text-align: center;
+}
+
+#outputHeading {
+    text-align: center;
+}
