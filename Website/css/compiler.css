@@ -151,3 +151,9 @@ button:hover {
 #outputHeading {
     text-align: center;
 }
+
+#run-btn,
+#clear-btn,
+#clear-output-btn {
+    font-family: 'OCR A', sans-serif;
+}
