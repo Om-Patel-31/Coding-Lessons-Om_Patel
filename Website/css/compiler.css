@@ -124,13 +124,13 @@ footer img {
 button {
     background-color: #00ff00;
     color: #121212;
-    border: none;
+    border: 15px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
-    border-radius: 20%;
+    border-radius: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
