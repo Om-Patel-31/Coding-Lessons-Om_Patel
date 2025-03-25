@@ -97,7 +97,6 @@ footer img {
     border-radius: 75%;
 }
 
-/* Code Editor Styles */
 .content {
     max-width: 80%;
     margin: 20px auto;
@@ -186,4 +185,5 @@ button:hover {
 
 #javascript-title {
     text-align: center;
+    font-size: 20px;
 }
