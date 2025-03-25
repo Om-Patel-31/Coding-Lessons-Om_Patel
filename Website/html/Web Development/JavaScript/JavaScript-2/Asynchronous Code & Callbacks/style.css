@@ -95,7 +95,93 @@ footer img {
     height: 50px;
     margin: 10px;
     border-radius: 75%;
+}
 
+/* Code Editor Styles */
+.content {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+#code {
+    width: 100%;
+    height: 200px;
+    background-color: #1e1e1e;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 10px;
+    font-family: monospace;
+    margin-bottom: 10px;
+    text-transform: none;
+}
+
+#output {
+    width: 100%;
+    height: 200px;
+    background-color: #1e1e1e;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 10px;
+    font-family: monospace;
+    margin: 10px 0;
+    text-transform: none;
+    overflow-y: auto;
+}
+
+button {
+    background-color: #121212;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    font-family: 'OCR A', monospace;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 5px rgba(0, 255, 0, 0.5);
+}
+
+#run-btn {
+    float: right;
+    margin: 0 20px 20px 0;
+}
+
+#clear-btn {
+    margin: 20px auto;
+    display: block;
+}
+
+.output-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+#outputHeading {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#toggle-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+}
+
+#clear-output-btn {
+    margin: 10px auto;
+    display: block;
 }
 
 #javascript-title {
