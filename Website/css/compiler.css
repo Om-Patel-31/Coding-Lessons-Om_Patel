@@ -128,7 +128,6 @@ button {
     padding: 12px 25px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 10px;
     transition: all 0.3s ease;
     border-radius: 25px;
     text-align: center;
@@ -142,24 +141,33 @@ button {
 /* Custom positioning for specific buttons */
 #run-btn {
     float: right;
-    margin-bottom: 20px;
+    margin: 0 20px 20px 0;
+}
+
+#clear-output-btn {
+    margin-left: 20px;
 }
 
 .output-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin: 20px 0;
+    gap: 20px;
 }
 
 #outputHeading {
     margin: 0;
-    display: inline-block;
 }
 
-#clear-output-btn {
-    margin: 0;
-    display: inline-block;
+.code-container {
+    clear: both;
+    width: 100%;
+}
+
+#clear-btn {
+    margin: 20px auto;
+    display: block;
 }
 
 button:hover {
