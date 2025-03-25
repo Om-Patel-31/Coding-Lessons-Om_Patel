@@ -145,7 +145,7 @@ button {
 }
 
 #clear-output-btn {
-    margin-left: 200px;
+    margin-left: 500px;
 }
 
 .output-container {
@@ -157,7 +157,7 @@ button {
 }
 
 #outputHeading {
-    margin: 0;
+    margin-left: 200px;
 }
 
 .code-container {
