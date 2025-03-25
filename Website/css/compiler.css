@@ -128,6 +128,7 @@ button {
     padding: 12px 25px;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 10px;
     transition: all 0.3s ease;
     border-radius: 25px;
     text-align: center;
@@ -136,38 +137,30 @@ button {
     position: relative;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    font-family: 'OCR A', monospace;
 }
 
 /* Custom positioning for specific buttons */
 #run-btn {
     float: right;
-    margin: 0 20px 20px 0;
-}
-
-#clear-output-btn {
-    margin-left: 500px;
+    margin-bottom: 20px;
 }
 
 .output-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 20px 300px;
-    gap: 20px;
+    justify-content: space-between;
+    margin: 20px 0;
 }
 
 #outputHeading {
-    margin-left: 200px;
+    margin: 0;
+    display: inline-block;
 }
 
-.code-container {
-    clear: both;
-    width: 100%;
-}
-
-#clear-btn {
-    margin: 20px auto;
-    display: block;
+#clear-output-btn {
+    margin: 0;
+    display: inline-block;
 }
 
 button:hover {
