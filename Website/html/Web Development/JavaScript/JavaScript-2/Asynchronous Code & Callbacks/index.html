@@ -33,7 +33,16 @@
                 </div>
                 <div class="window-content">
                     <div class="code-view">
-                        <pre id="classwork-code"></pre>
+                        <div class="code-toggles">
+                            <button class="code-toggle active" data-view="html">HTML</button>
+                            <button class="code-toggle" data-view="css">CSS</button>
+                            <button class="code-toggle" data-view="js">JS</button>
+                        </div>
+                        <div class="code-content">
+                            <pre id="classwork-html" class="code-file active"></pre>
+                            <pre id="classwork-css" class="code-file"></pre>
+                            <pre id="classwork-js" class="code-file"></pre>
+                        </div>
                     </div>
                     <div class="output-view">
                         <pre id="classwork-output"></pre>
@@ -54,7 +63,16 @@
                 </div>
                 <div class="window-content">
                     <div class="code-view">
-                        <pre id="homework-code"></pre>
+                        <div class="code-toggles">
+                            <button class="code-toggle active" data-view="html">HTML</button>
+                            <button class="code-toggle" data-view="css">CSS</button>
+                            <button class="code-toggle" data-view="js">JS</button>
+                        </div>
+                        <div class="code-content">
+                            <pre id="homework-html" class="code-file active"></pre>
+                            <pre id="homework-css" class="code-file"></pre>
+                            <pre id="homework-js" class="code-file"></pre>
+                        </div>
                     </div>
                     <div class="output-view">
                         <pre id="homework-output"></pre>
@@ -101,10 +119,33 @@
             });
 
             // Example content loading
-            document.getElementById('classwork-code').textContent = '// Classwork code will appear here...';
+            document.getElementById('classwork-html').textContent = '<!-- Classwork HTML will appear here... -->';
+            document.getElementById('classwork-css').textContent = '/* Classwork CSS will appear here... */';
+            document.getElementById('classwork-js').textContent = '// Classwork JavaScript will appear here...';
             document.getElementById('classwork-output').textContent = 'Classwork output will appear here...';
-            document.getElementById('homework-code').textContent = '// Homework code will appear here...';
+            
+            document.getElementById('homework-html').textContent = '<!-- Homework HTML will appear here... -->';
+            document.getElementById('homework-css').textContent = '/* Homework CSS will appear here... */';
+            document.getElementById('homework-js').textContent = '// Homework JavaScript will appear here...';
             document.getElementById('homework-output').textContent = 'Homework output will appear here...';
+
+            // Code toggle functionality
+            document.querySelectorAll('.code-toggle').forEach(button => {
+                button.addEventListener('click', () => {
+                    const window = button.closest('.window');
+                    const toggles = window.querySelectorAll('.code-toggle');
+                    const files = window.querySelectorAll('.code-file');
+                    
+                    // Remove active class from all buttons and files
+                    toggles.forEach(t => t.classList.remove('active'));
+                    files.forEach(f => f.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding file
+                    button.classList.add('active');
+                    const viewType = button.dataset.view;
+                    window.querySelector(`#${window.id}-${viewType}`).classList.add('active');
+                });
+            });
         </script>
     </body>
 </html>
