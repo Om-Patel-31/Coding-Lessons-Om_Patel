@@ -87,6 +87,29 @@
         </footer>
 
         <script>
+            // File loading functionality
+            async function loadFile(filePath, elementId) {
+                try {
+                    const response = await fetch(filePath);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    const content = await response.text();
+                    document.getElementById(elementId).textContent = content;
+                } catch (error) {
+                    console.error('Error loading file:', error);
+                    document.getElementById(elementId).textContent = `Error loading file: ${error.message}`;
+                }
+            }
+
+            // Load classwork files
+            loadFile('Classwork/index.html', 'classwork-html');
+            loadFile('Classwork/style.css', 'classwork-css');
+            loadFile('Classwork/script.js', 'classwork-js');
+
+            // Load homework files
+            loadFile('Homework/index.html', 'homework-html');
+            loadFile('Homework/style.css', 'homework-css');
+            loadFile('Homework/script.js', 'homework-js');
+
             // Fullscreen functionality
             document.querySelectorAll('.fullscreen-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -117,17 +140,6 @@
                     }
                 });
             });
-
-            // Example content loading
-            document.getElementById('classwork-html').textContent = '<!-- Classwork HTML will appear here... -->';
-            document.getElementById('classwork-css').textContent = '/* Classwork CSS will appear here... */';
-            document.getElementById('classwork-js').textContent = '// Classwork JavaScript will appear here...';
-            document.getElementById('classwork-output').textContent = 'Classwork output will appear here...';
-            
-            document.getElementById('homework-html').textContent = '<!-- Homework HTML will appear here... -->';
-            document.getElementById('homework-css').textContent = '/* Homework CSS will appear here... */';
-            document.getElementById('homework-js').textContent = '// Homework JavaScript will appear here...';
-            document.getElementById('homework-output').textContent = 'Homework output will appear here...';
 
             // Code toggle functionality
             document.querySelectorAll('.code-toggle').forEach(button => {
