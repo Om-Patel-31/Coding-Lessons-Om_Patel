@@ -23,20 +23,42 @@
             <div class="window">
                 <div class="window-header">
                     <h2>Classwork</h2>
-                    <button class="fullscreen-btn">⛶</button>
+                    <div class="window-controls">
+                        <label class="switch">
+                            <input type="checkbox" class="toggle-input" title="Toggle between code and output view">
+                            <span class="slider round"></span>
+                        </label>
+                        <button class="fullscreen-btn">⛶</button>
+                    </div>
                 </div>
                 <div class="window-content">
-                    <pre id="classwork-output"></pre>
+                    <div class="code-view">
+                        <pre id="classwork-code"></pre>
+                    </div>
+                    <div class="output-view">
+                        <pre id="classwork-output"></pre>
+                    </div>
                 </div>
             </div>
             
             <div class="window">
                 <div class="window-header">
                     <h2>Homework</h2>
-                    <button class="fullscreen-btn">⛶</button>
+                    <div class="window-controls">
+                        <label class="switch">
+                            <input type="checkbox" class="toggle-input" title="Toggle between code and output view" aria-label="Toggle between code and output view">
+                            <span class="slider round"></span>
+                        </label>
+                        <button class="fullscreen-btn" title="Toggle fullscreen">⛶</button>
+                    </div>
                 </div>
                 <div class="window-content">
-                    <pre id="homework-output"></pre>
+                    <div class="code-view">
+                        <pre id="homework-code"></pre>
+                    </div>
+                    <div class="output-view">
+                        <pre id="homework-output"></pre>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,9 +83,28 @@
                 });
             });
 
-            // Example content loading (you can replace this with actual content)
-            document.getElementById('classwork-output').textContent = 'Classwork content will appear here...';
-            document.getElementById('homework-output').textContent = 'Homework content will appear here...';
+            // Toggle functionality
+            document.querySelectorAll('.toggle-input').forEach(toggle => {
+                toggle.addEventListener('change', () => {
+                    const window = toggle.closest('.window');
+                    const codeView = window.querySelector('.code-view');
+                    const outputView = window.querySelector('.output-view');
+                    
+                    if (toggle.checked) {
+                        codeView.style.display = 'none';
+                        outputView.style.display = 'block';
+                    } else {
+                        codeView.style.display = 'block';
+                        outputView.style.display = 'none';
+                    }
+                });
+            });
+
+            // Example content loading
+            document.getElementById('classwork-code').textContent = '// Classwork code will appear here...';
+            document.getElementById('classwork-output').textContent = 'Classwork output will appear here...';
+            document.getElementById('homework-code').textContent = '// Homework code will appear here...';
+            document.getElementById('homework-output').textContent = 'Homework output will appear here...';
         </script>
     </body>
 </html>
