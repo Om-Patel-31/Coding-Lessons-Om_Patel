@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coding Lessons | Asynchronous Code & Callbacks</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=OCR+A&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/Website/css/web_js.css">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/Website/html/about.html">About</a></li>
+                <li><a href="/Website/html/compiler.html">Compiler</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <h1 id="javascript-title">Asynchronous Code & Callbacks</h1>
+        
+        <div class="windows-container">
+            <div class="window">
+                <div class="window-header">
+                    <h2>Classwork</h2>
+                    <div class="window-controls">
+                        <label class="switch">
+                            <input type="checkbox" class="toggle-input" title="Toggle between code and output view">
+                            <span class="slider round"></span>
+                        </label>
+                        <button class="fullscreen-btn">⛶</button>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <div class="code-view">
+                        <div class="code-toggles">
+                            <button class="code-toggle active" data-view="html">HTML</button>
+                            <button class="code-toggle" data-view="css">CSS</button>
+                            <button class="code-toggle" data-view="js">JS</button>
+                        </div>
+                        <div class="code-content">
+                            <pre id="classwork-html" class="code-file active"></pre>
+                            <pre id="classwork-css" class="code-file"></pre>
+                            <pre id="classwork-js" class="code-file"></pre>
+                        </div>
+                    </div>
+                    <div class="output-view">
+                        <pre id="classwork-output"></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="window">
+                <div class="window-header">
+                    <h2>Homework</h2>
+                    <div class="window-controls">
+                        <label class="switch">
+                            <input type="checkbox" class="toggle-input" title="Toggle between code and output view" aria-label="Toggle between code and output view">
+                            <span class="slider round"></span>
+                        </label>
+                        <button class="fullscreen-btn" title="Toggle fullscreen">⛶</button>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <div class="code-view">
+                        <div class="code-toggles">
+                            <button class="code-toggle active" data-view="html">HTML</button>
+                            <button class="code-toggle" data-view="css">CSS</button>
+                            <button class="code-toggle" data-view="js">JS</button>
+                        </div>
+                        <div class="code-content">
+                            <pre id="homework-html" class="code-file active"></pre>
+                            <pre id="homework-css" class="code-file"></pre>
+                            <pre id="homework-js" class="code-file"></pre>
+                        </div>
+                    </div>
+                    <div class="output-view">
+                        <pre id="homework-output"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=patom3108@gmail.com&su=Hello&body=I%20wanted%20to%20reach%20out%20to%20you!" target="_blank" rel="noopener"><img src="/Website/assets/gmail.webp" alt="Gmail-Logo"></a>
+            <a href="https://github.com/Om-Patel-31/CodingClasses" target="_blank" rel="noopener"><img src="/Website/assets/github.webp" alt="Github-Logo"></a>
+        </footer>
+
+        <script>
+            // File loading functionality
+            async function loadFile(filePath, elementId) {
+                try {
+                    const response = await fetch(filePath);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    const content = await response.text();
+                    document.getElementById(elementId).textContent = content;
+                } catch (error) {
+                    console.error('Error loading file:', error);
+                    document.getElementById(elementId).textContent = `Error loading file: ${error.message}`;
+                }
+            }
+
+            // Load classwork files
+            loadFile('Classwork/index.html', 'classwork-html');
+            loadFile('Classwork/style.css', 'classwork-css');
+            loadFile('Classwork/script.js', 'classwork-js');
+
+            // Load homework files
+            loadFile('Homework/index.html', 'homework-html');
+            loadFile('Homework/style.css', 'homework-css');
+            loadFile('Homework/script.js', 'homework-js');
+
+            // Fullscreen functionality
+            document.querySelectorAll('.fullscreen-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const window = btn.closest('.window');
+                    if (!document.fullscreenElement) {
+                        window.requestFullscreen();
+                        btn.textContent = '⮌';
+                    } else {
+                        document.exitFullscreen();
+                        btn.textContent = '⛶';
+                    }
+                });
+            });
+
+            // Toggle functionality
+            document.querySelectorAll('.toggle-input').forEach(toggle => {
+                toggle.addEventListener('change', () => {
+                    const window = toggle.closest('.window');
+                    const codeView = window.querySelector('.code-view');
+                    const outputView = window.querySelector('.output-view');
+                    
+                    if (toggle.checked) {
+                        codeView.style.display = 'none';
+                        outputView.style.display = 'block';
+                    } else {
+                        codeView.style.display = 'block';
+                        outputView.style.display = 'none';
+                    }
+                });
+            });
+
+            // Code toggle functionality
+            document.querySelectorAll('.code-toggle').forEach(button => {
+                button.addEventListener('click', () => {
+                    const window = button.closest('.window');
+                    const toggles = window.querySelectorAll('.code-toggle');
+                    const files = window.querySelectorAll('.code-file');
+                    
+                    // Remove active class from all buttons and files
+                    toggles.forEach(t => t.classList.remove('active'));
+                    files.forEach(f => f.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding file
+                    button.classList.add('active');
+                    const viewType = button.dataset.view;
+                    window.querySelector(`#${window.id}-${viewType}`).classList.add('active');
+                });
+            });
+        </script>
+    </body>
+</html>
