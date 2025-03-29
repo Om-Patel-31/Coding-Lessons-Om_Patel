@@ -20,7 +20,7 @@
         <h1 id="javascript-title">Asynchronous Code & Callbacks</h1>
         
         <div class="windows-container">
-            <div class="window">
+            <div class="window" id="classwork">
                 <div class="window-header">
                     <h2>Classwork</h2>
                     <div class="window-controls">
@@ -50,7 +50,7 @@
                 </div>
             </div>
             
-            <div class="window">
+            <div class="window" id="homework">
                 <div class="window-header">
                     <h2>Homework</h2>
                     <div class="window-controls">
@@ -155,7 +155,8 @@
                     // Add active class to clicked button and corresponding file
                     button.classList.add('active');
                     const viewType = button.dataset.view;
-                    window.querySelector(`#${window.id}-${viewType}`).classList.add('active');
+                    const windowId = window.id;
+                    document.getElementById(`${windowId}-${viewType}`).classList.add('active');
                 });
             });
         </script>
