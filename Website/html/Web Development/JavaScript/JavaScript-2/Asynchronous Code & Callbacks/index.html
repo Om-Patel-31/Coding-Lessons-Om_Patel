@@ -18,80 +18,52 @@
         </nav>
         <hr>
         <h1 id="javascript-title">Asynchronous Code & Callbacks</h1>
-        <div class="content-cards">
-            <div class="card">
-                <h2>Classwork</h2>
-                <a href="Classwork/classwork.html">
-                    <img src="/Website/assets/classwork.webp" alt="Classwork">
-                </a>
+        
+        <div class="windows-container">
+            <div class="window">
+                <div class="window-header">
+                    <h2>Classwork</h2>
+                    <button class="fullscreen-btn">⛶</button>
+                </div>
+                <div class="window-content">
+                    <pre id="classwork-output"></pre>
+                </div>
             </div>
-            <div class="card">
-                <h2>Homework</h2>
-                <a href="Homework/homework.html">
-                    <img src="/Website/assets/homework.webp" alt="Homework">
-                </a>
+            
+            <div class="window">
+                <div class="window-header">
+                    <h2>Homework</h2>
+                    <button class="fullscreen-btn">⛶</button>
+                </div>
+                <div class="window-content">
+                    <pre id="homework-output"></pre>
+                </div>
             </div>
         </div>
-        <div class="content">
-            <textarea id="code" placeholder="Write JavaScript code here..."></textarea>
-            <br>
-            <button id="run-btn">Run Code</button>
-            <button id="clear-btn">Clear Code</button>
-            <div class="output-container">
-                <h2 id="outputHeading">Output:</h2>
-                <button id="toggle-btn">Toggle View</button>
-                <pre id="output"></pre>
-                <button id="clear-output-btn">Clear Output</button>
-            </div>
-            <br><br>
-        </div>
+
         <footer>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=patom3108@gmail.com&su=Hello&body=I%20wanted%20to%20reach%20out%20to%20you!" target="_blank" rel="noopener"><img src="/Website/assets/gmail.webp" alt="Gmail-Logo"></a>
             <a href="https://github.com/Om-Patel-31/CodingClasses" target="_blank" rel="noopener"><img src="/Website/assets/github.webp" alt="Github-Logo"></a>
         </footer>
+
         <script>
-            // Toggle functionality
-            const toggleBtn = document.getElementById('toggle-btn');
-            const codeArea = document.getElementById('code');
-            const outputArea = document.getElementById('output');
-            let isShowingCode = true;
-
-            toggleBtn.addEventListener('click', () => {
-                if (isShowingCode) {
-                    codeArea.style.display = 'none';
-                    outputArea.style.display = 'block';
-                    toggleBtn.textContent = 'Show Code';
-                } else {
-                    codeArea.style.display = 'block';
-                    outputArea.style.display = 'none';
-                    toggleBtn.textContent = 'Show Output';
-                }
-                isShowingCode = !isShowingCode;
+            // Fullscreen functionality
+            document.querySelectorAll('.fullscreen-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const window = btn.closest('.window');
+                    if (!document.fullscreenElement) {
+                        window.requestFullscreen();
+                        btn.textContent = '⮌';
+                    } else {
+                        document.exitFullscreen();
+                        btn.textContent = '⛶';
+                    }
+                });
             });
 
-            // Run code functionality
-            document.getElementById('run-btn').addEventListener('click', () => {
-                const code = document.getElementById('code').value;
-                const output = document.getElementById('output');
-                output.textContent = '';
-                
-                try {
-                    const result = eval(code);
-                    output.textContent = result !== undefined ? result : '';
-                } catch (error) {
-                    output.textContent = `Error: ${error.message}`;
-                }
-            });
-
-            // Clear code functionality
-            document.getElementById('clear-btn').addEventListener('click', () => {
-                document.getElementById('code').value = '';
-            });
-
-            // Clear output functionality
-            document.getElementById('clear-output-btn').addEventListener('click', () => {
-                document.getElementById('output').textContent = '';
-            });
+            // Example content loading (you can replace this with actual content)
+            document.getElementById('classwork-output').textContent = 'Classwork content will appear here...';
+            document.getElementById('homework-output').textContent = 'Homework content will appear here...';
         </script>
     </body>
 </html>
